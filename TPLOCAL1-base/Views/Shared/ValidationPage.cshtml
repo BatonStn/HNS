@@ -1,0 +1,121 @@
+﻿@model TPLOCAL1.Models.FormModel
+
+<! DOCTYPE html>
+<html>
+<head>
+    <title>HN - Validation Page</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <p class="topText">Your form has been taken into account
+    <div style="margin-left:150px;">
+        <table>
+            <tr>
+                <th colspan="2">
+                    Personal Information
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Name</label>
+                </th>
+                <th class="fixData">
+                    @Model.Name
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Forename</label>
+                </th>
+                    <th class="fixData">
+                    @Model.Forename
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Gender</label>
+                </th>
+                    <th class="fixData">
+                    @Model.Gender
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Address</label>
+                </th>
+                    <th class="fixData">
+                    @Model.Address
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Zip Code</label>
+                </th>
+                    <th class="fixData">
+                    @Model.ZipCode
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Town</label>
+                </th>
+                    <th class="fixData">
+                    @Model.Town
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Email</label>
+                </th>
+                    <th class="fixData">
+                    @Model.Email
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <br />
+                    Training Information
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Start Date</label>
+                </th>
+                <th class="fixData">
+                    @Model.StartDate
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Course</label>
+                </th>
+                <th class="fixData">
+                    @Model.TrainingType
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <br />
+                    Training Reviews
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>Cobol Review</label>
+                </th>
+                <th class="fixData">
+                    @Model.CobolReview
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label>C# Review</label>
+                </th>
+                 <th class="fixData">
+                    @Model.CSharpReview
+                </th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@using TPLOCAL1.Models;
+
+<! DOCTYPE html>
+<html>
+<head>
+	<title>HN - Opinion Lists</title>
+	<link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <table class="xmlTable">
+        <tr>
+            <th colspan="3">
+                List
+            </th>
+        </tr>
+        @{
+            OpinionList opinionList = new OpinionList();
+        }
+        @foreach(Opinion op in opinionList.GetAvis("XlmFile\\DataAvis.xml"))
+        {
+            <tr>
+                <th class="xmlData">
+                    @op.LastName
+                </th >
+                <th class="xmlData">
+                    @op.FirstName
+                </th>
+                    @if (op.OpinionGiven == "O")
+                    {
+                        <th style="background-color: green" class="xmlData">
+                            Yes
+                        </th>
+                    } 
+                    else
+                    {
+                        <th style="background-color: red" class="xmlData">
+                            No
+                        </th>
+                    }
+            </tr>
+        }
+    </table>
+</body>
+</html>

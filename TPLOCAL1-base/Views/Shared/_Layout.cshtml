@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <header>
+        <a href="/Home/Index"><img src="~/resources/GroupeHN.png" class="image" alt="GroupHN" /></a>
+        <h1>@HomeText()</h1>
+    </header>
+    <nav>
+        <ul>
+            @{
+                Nav();
+            }
+        </ul>
+    </nav>
+    @RenderBody()
+
+</body>
+</html>
+
+@{
+    string HomeText() {
+        string viewPath = System.IO.Path.GetFileNameWithoutExtension(ViewContext.View.Path);
+
+        switch(viewPath)
+        {
+            case "Form":
+                return "TP HN Opinion Form";
+            case "OpinionList":
+                return "Opinion Lists";
+            case "ValidationPage":
+                return "Validation TP HN Opinion";
+            default:
+                return "Welcome to TP HN";
+        }
+    }
+
+    void Nav() {
+        string viewPath = System.IO.Path.GetFileNameWithoutExtension(ViewContext.View.Path);
+
+        switch (viewPath)
+        {
+            case "Form":
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+                break;
+            case "OpinionList":
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a href="/Home/Index/Form">Fill out form</a></li>
+                break;
+            case "ValidationPage":
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+                break;
+            default:
+                <li><a href="/Home/Index/Form">Fill out form</a></li>
+                <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+                break;
+        }
+    }
+}

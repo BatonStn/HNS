@@ -1,0 +1,149 @@
+﻿@model TPLOCAL1.Models.FormModel
+
+<! DOCTYPE html>
+<html>
+<head>
+    <title>HN - Form</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <form method="post" asp-action="ValidationFormulaire">
+        <table>
+            <tr>
+                <th colspan="2">
+                    Personal Information
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="Name" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="Forename" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="Forename" class="form-control" />
+                    @Html.ValidationMessageFor(m => m.Forename)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="Gender" class="control-label"></label>
+                </th>
+                <th>
+                    <select asp-for="Gender">
+                        <option value="select">Select a gender</option>
+                        <option value="man">Man</option>
+                        <option value="woman">Woman</option>
+                        <option value="other">Other</option>
+                    </select>
+                    @Html.ValidationMessageFor(m => m.Gender)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="Address" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="Address" class="form-control" />
+                    @Html.ValidationMessageFor(m => m.Address)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="ZipCode" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="ZipCode" class="form-control" />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="Town" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="Town" class="form-control" />
+                    @Html.ValidationMessageFor(m => m.Town)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="Email" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="Email" class="form-control" />
+                    @Html.ValidationMessageFor(m => m.Email)
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <br />
+                    Training Information
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="StartDate" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="StartDate" placeholder="dd/mm/yyyy" />
+                    @Html.ValidationMessageFor(m => m.StartDate)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="TrainingType" class="control-label"></label>
+                </th>
+                <th>
+                    <select asp-for="TrainingType">
+                        <option value="select2">Select a course</option>
+                        <option value="cobol">Cobol Training</option>
+                        <option value="object">Object Training</option>
+                        <option value="dual">Dual Skills Training</option>
+                    </select>
+                    @Html.ValidationMessageFor(m => m.TrainingType)
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <br />
+                    Training Reviews
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="CobolReview" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="CobolReview" />
+                    @Html.ValidationMessageFor(m => m.CobolReview)
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label asp-for="CSharpReview" class="control-label"></label>
+                </th>
+                <th>
+                    <input asp-for="CSharpReview" />
+                    @Html.ValidationMessageFor(m => m.CSharpReview)
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <br />
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+
+    @* @Html.ValidationSummary(false, "") *@
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿.image {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1 {
+    /*margin-right: 170px;*/
+    margin-left: 170px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav {
+    float: left;
+    width: 150px;
+    border: 2px solid #8c014c;
+    background-color: #8c014c;
+    color: white;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: chocolate;
+}
+
+section, table {
+    margin-left: 170px;
+}
+
+label {
+    font-weight: normal;
+    display: flex;
+    min-width: 150px;
+}
+
+
+form {
+    margin-left: 150px;
+}
+
+span {
+    position: absolute;
+    margin-left: 20px;
+    font-weight: normal;
+    color: red;
+}
+
+select {
+    min-width: 163.867px;
+}
+
+.topText {
+    position: absolute;
+    left: 50%;
+    top: 1%;
+    transform:translate(-50%, -50%);
+    font-weight: bold;
+    color: black;
+}
+
+p {
+    font-weight: normal;
+    color: blue;
+}
+
+.xmlTable p {
+    font-weight: normal;
+    color: black;
+    text-align: left;
+    padding: 4px;
+}
+
+.xmlTable, .xmlTable th {
+    border: 1px solid black;
+}
+
+.xmlTable {
+    margin-left: 325px;
+}
+
+.fixData {
+    font-weight: normal;
+    color: blue;
+    padding: 3px;
+}
+
+.xmlData {
+    font-weight: normal;
+    padding: 5px;
+}
