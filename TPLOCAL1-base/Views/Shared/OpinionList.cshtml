@@ -2,6 +2,7 @@
 
 <! DOCTYPE html>
 <html>
+@await Html.PartialAsync("~/Views/Shared/_Layout.cshtml", "OpinionList")
 <head>
 	<title>HN - Opinion Lists</title>
 	<link rel="stylesheet" href="~/resources/Index.css" />
@@ -12,6 +13,17 @@
             <th colspan="3">
                 List
             </th>
+        </tr>
+        <tr>
+            <th class="xmlData">
+                Name
+            </th>
+            <th class="xmlData">
+                First Name
+			</th>
+			<th class="xmlData">
+				Opinion
+			</th>
         </tr>
         @{
             OpinionList opinionList = new OpinionList();

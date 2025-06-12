@@ -1,27 +1,29 @@
-﻿<!DOCTYPE html>
+﻿@model string
+
+<!DOCTYPE html>
 <html>
 <body>
     <header>
-        <a href="/Home/Index"><img src="~/resources/GroupeHN.png" class="image" alt="GroupHN" /></a>
-        <h1>@HomeText()</h1>
+        <a href="/"><img src="~/resources/GroupeHN.png" class="image" alt="GroupHN" /></a>
+        <h1>@HomeText(Model)</h1>
     </header>
     <nav>
         <ul>
-            @{
-                Nav();
-            }
+            <li>
+                @{Nav(Model);}
+            </li>
+            <li>
+                @{Nav2(Model);}
+            </li>
         </ul>
     </nav>
-    @RenderBody()
-
 </body>
 </html>
 
 @{
-    string HomeText() {
-        string viewPath = System.IO.Path.GetFileNameWithoutExtension(ViewContext.View.Path);
+    string HomeText(string model) {
 
-        switch(viewPath)
+        switch (model)
         {
             case "Form":
                 return "TP HN Opinion Form";
@@ -34,26 +36,39 @@
         }
     }
 
-    void Nav() {
-        string viewPath = System.IO.Path.GetFileNameWithoutExtension(ViewContext.View.Path);
+    void Nav(string model) {
 
-        switch (viewPath)
+        switch (model)
         {
             case "Form":
-                <li><a href="/Home/Index">Home</a></li>
-                <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+                <a href="/">Home</a>
                 break;
             case "OpinionList":
-                <li><a href="/Home/Index">Home</a></li>
-                <li><a href="/Home/Index/Form">Fill out form</a></li>
+                <a href="/">Home</a>
                 break;
             case "ValidationPage":
-                <li><a href="/Home/Index">Home</a></li>
-                <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+                <a href="/">Home</a>
                 break;
             default:
-                <li><a href="/Home/Index/Form">Fill out form</a></li>
-                <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+                <a href="/Home/Index/Form">Fill out form</a>
+                break;
+        }
+    }
+
+    void Nav2(string model) {
+        switch (model)
+        {
+            case "Form":
+                <a href="/Home/Index/OpinionList">Opinion List</a>
+                break;
+            case "OpinionList":
+                <a href="/Home/Index/Form">Fill out form</a>
+                break;
+            case "ValidationPage":
+                <a href="/Home/Index/OpinionList">Opinion List</a>
+                break;
+            default:
+                <a href="/Home/Index/OpinionList">Opinion List</a>
                 break;
         }
     }

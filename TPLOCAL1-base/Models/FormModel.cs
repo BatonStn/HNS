@@ -20,6 +20,7 @@ public class FormModel
     [Required]
     [RegularExpression(@"^[0-9]*$", ErrorMessage = "Zip must be a 5 characters long number")]
     [StringLength(5)]
+    [Display(Name="Zip Code")]
     public string ZipCode { get; set; }
 
     [Required]
@@ -27,6 +28,7 @@ public class FormModel
 
     [Required]
     [EmailAddress(ErrorMessage = "Invalid Email Address")]
+    [Display(Name="Email Address")]
     public string Email { get; set; }
 
     [Required(ErrorMessage = "Start Date field is required")]
@@ -35,7 +37,7 @@ public class FormModel
     public string StartDate { get; set; }
 
     [Required]
-    [Display(Name = "Select Course")]
+    [Display(Name = "Course")]
     public string TrainingType { get; set; }
 
     [Required]
